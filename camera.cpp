@@ -1,10 +1,6 @@
 #include "camera.h"
 
-Camera::Camera()
-{
-    capture.open(0);
-}
-
+Camera::Camera() { capture.open(0); }
 
 Camera::~Camera()
 {
@@ -12,27 +8,19 @@ Camera::~Camera()
     frame.release();
 }
 
+void Camera::readFrame() { capture.read(frame); }
 
-void Camera::readFrame()
-{
-    capture.read(frame);
-}
-
-
-const Mat& Camera::getFrame()
-{
-    return frame;
-}
+const Mat& Camera::getFrame() { return frame; }
 
 const Mat& Camera::getGrayScaleFrame()
 {
-    cvtColor(frame,grayScaleFrame,CV_BGR2GRAY);
+    cvtColor(frame, grayScaleFrame, CV_BGR2GRAY);
     return grayScaleFrame;
 }
 
 bool Camera::isOpened()
 {
-    if(capture.isOpened())
+    if (capture.isOpened())
     {
         return true;
     }
@@ -41,5 +29,4 @@ bool Camera::isOpened()
         return false;
     }
 }
-
 

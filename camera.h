@@ -15,17 +15,15 @@ private:
     Mat frame;
     Mat grayScaleFrame;
 
-
 public:
-    //Constructor
+    // Constructor
     Camera();
-    //Destructor
+    // Destructor
     ~Camera();
     void readFrame();
     const Mat& getFrame();
     const Mat& getGrayScaleFrame();
     bool isOpened();
-
 };
 
-#endif // CAMERA_H
+#endif  // CAMERA_H

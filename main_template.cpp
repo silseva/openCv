@@ -1,9 +1,9 @@
-#include <QCoreApplication>
-#include <iostream>
 #include <camera.h>
 
-using namespace std;
+#include <QCoreApplication>
+#include <iostream>
 
+using namespace std;
 
 int main(int argc, char *argv[])
 {
@@ -13,19 +13,19 @@ int main(int argc, char *argv[])
 
     namedWindow("Window", CV_WINDOW_AUTOSIZE);
 
-    if(camera.isOpened())
+    if (camera.isOpened())
     {
-        while(1)
+        while (1)
         {
             camera.readFrame();
 
-            if(!camera.getFrame().empty())
+            if (!camera.getFrame().empty())
             {
                 imshow("Window", camera.getFrame());
-                //imshow("Window",camera.getGrayScaleFrame());
+                // imshow("Window",camera.getGrayScaleFrame());
             }
 
-            if(waitKey(1) == 'q')
+            if (waitKey(1) == 'q')
             {
                 break;
                 destroyWindow("Window");
