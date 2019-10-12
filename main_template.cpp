@@ -1,7 +1,10 @@
-#include <camera.h>
+#include "camera.h"
 
 #include <QCoreApplication>
 #include <iostream>
+
+#include <opencv2/highgui.hpp>
+#include <opencv2/highgui/highgui_c.h>
 
 using namespace std;
 
